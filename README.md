@@ -26,30 +26,7 @@ Pocket CFO goes beyond simple expense tracking by implementing treasury-grade fi
 
 This monorepo showcases a decoupled, serverless architecture designed for high availability and zero cost.
 
-```mermaid
-graph LR
-    USER((User))
-    subgraph IL [INPUT LAYER]
-        TB[Telegram Bot<br/>Chat UI]
-    end
-    subgraph BE [BACK-END SERVER]
-        VW[Vercel Serverless<br/>Node.js Webhook]
-        AI[Gemini Fallback Engine<br/>AI OCR & Parsing]
-        VW <--> AI
-    end
-    subgraph DB [DATA LAYER]
-        DB_SUPA[(Supabase<br/>Postgres + RLS + Views)]
-    end
-    subgraph FE [FRONT-END CLIENT]
-        SPA[Pocket CFO Dashboard<br/>React + Tailwind + Shadcn]
-    end
-
-    USER -- "Photo/Text (Receipts, QRIS, Apps)" --> TB
-    TB -- Trigger --> VW
-    VW -- Insert JSON --> DB_SUPA
-    SPA <--> DB_SUPA
-    USER -. Strategic Analysis .-> SPA
-```
+![Pocket CFO Architecture Diagram](./docs/architecture.png)
 
 ---
 
