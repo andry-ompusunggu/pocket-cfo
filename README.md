@@ -37,7 +37,8 @@ This monorepo showcases a decoupled, serverless architecture designed for high a
 2.  Run `supabase/schema.sql` in the SQL Editor to set up the tables, Row Level Security (RLS), and analytics views.
 3.  **Explore with Sample Data (Optional):** To see the dashboard's visualization capabilities immediately, you can run the `supabase/seed.sql` script. 
     
-    **Crucial Step Before Seeding:** > Our database enforces strict relational integrity and Telegram ID whitelisting. You must link the demo data to your actual accounts.
+    > **Crucial Step Before Seeding:** 
+    > Our database enforces strict relational integrity and Telegram ID whitelisting. You must link the demo data to your actual accounts.
     > 
     > 1. **Get your Supabase UID:** Go to **Authentication -> Users** in your Supabase dashboard, create a new dummy user (e.g., `demo@test.com`), and copy the newly generated **User UID**.
     > 2. **Get your Telegram ID:** Open your Telegram app, search for the `@userinfobot` (or any similar ID bot), send `/start`, and copy the **numerical ID** it gives you.
@@ -112,7 +113,7 @@ Now that the webhook is active and secure, let's verify the end-to-end pipeline 
 
 1. Open your newly created bot in the Telegram app and click **Start**.
 2. **Test 1 (Natural Language Text):** Send a casual expense message. For example:
-   > *"Beli kopi kenangan 25rb pakai qris, 22 April 2026"*
+   > "Beli kopi kenangan 25rb pakai qris, 22 April 2026" (Translation: "Bought Kenangan coffee for 25k IDR using QRIS, April 22, 2026").
 3. **Test 2 (Vision/OCR):** Snap a photo of a recent minimarket receipt or upload a screenshot of a digital payment (e.g., GoPay/OVO transfer receipt).
 4. **The Result:** The bot should process the input via Gemini and reply with a structured summary. You can immediately check your Supabase `transactions` and `transaction_items` tables (or open your local Frontend dashboard) to see the magic happen!
 
